@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    /* Colors */
+    --white: white;
+    --bg: rgba(255, 255, 255, 0.144);
+    --bg-primary: #242526;
+    --chat-user: rgba(0,128,255, .6);
+
+    
+    /* Fonts */
+    --font-primary: 'Roboto', sans-serif;
+    --font-second: 'Poppins', sans-sarif;
+}
+
+body, html{
+    max-width: 100vw;
+    max-height: 100vh;
+    background-color: black;
+}
+.container-picture{
+    position: relative;
+    margin: auto;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+}
+
+.container-picture .picture{
+    width: 70%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.container-picture .picture .items{
+    width: 30px;
+    height: 30px;
+
+    position: absolute;
+
+    z-index: 2;
+
+    border-radius: 50%;
+
+    opacity: .7;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    top: 0rem;
+    right: 0;
+}
+
+.container-picture .picture .items:hover{
+    background: var(--bg);
+}
+.container-picture .picture .items:nth-child(2){
+    left: 0px;
+}
+
+.container-picture .picture .items img{
+    width: 80%;
+    height: 80%;
+
+}
+.container-picture .picture .arrow:nth-child(1){
+    
+    top: 50%;
+    bottom: 50%;
+    left: 0;
+}
+.container-picture .picture .arrow:last-child{
+    top: 50%;
+    bottom: 50%;
+    right: 0;
+}
+.container-picture .picture .arrow {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    z-index: 2;
+
+    border-radius: 50%;
+    opacity: .2;
+    background-color: var(--white);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.container-picture .picture .arrow:hover
+{
+    opacity: .5;
+}
+
+.container-picture .picture .arrow img{
+    opacity: .5;
+    width: 60%;
+    height: 60%;
+
+}
+
+
+.container-picture .picture .imgContainer{
+    display: flex;
+    flex: 8;
+    align-items: center;
+    justify-content: center;
+    background: url('https://aidcrusader.azurewebsites.net/img/gallery/gallery-43.jpg') no-repeat;
+    background-size:contain;
+    background-position:center ;
+    width: 40vw;
+    height: 80vh;
+}
+.contentMessages{
+    max-width: 30%;
+    max-height: 90%;
+    background-color: var( --bg-primary);
+    padding: .5rem;
+
+    position: relative;
+
+    border-radius: .75rem;
+}
+.contentMessages .person-post{
+    width: 100%;
+    display: flex;
+    padding: 1rem;
+    flex: 1;
+    flex-direction: column;
+}
+.contentMessages .person{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.contentMessages .person-post .person .person-photograph{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: url('https://scontent.fcgh53-1.fna.fbcdn.net/v/t1.6435-9/170269505_2206015906195475_5324368661061590871_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=EPu69RvfgRcAX-e_m73&_nc_ht=scontent.fcgh53-1.fna&oh=00_AT86ZgbG5rMr_kiBodr_oy-j9Z98LGL75ujCFtqtiBH5Gw&oe=620DA34A') no-repeat;
+    background-size: cover;
+}
+.contentMessages .person-post .person .person-info{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: 1rem;
+    color: var(--white);
+}
+.contentMessages .person-post .person .person-info h3{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: var(--font-primary)
+}
+
+.contentMessages .person-post .person .person-info p{
+    font-size: 14px;
+    font-family: var(--font-second)
+}
+
+.contentMessages .person-post .post{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}   
+.contentMessages .person-post .post p{
+    color: var(--white);
+    font-size: 14px;
+    font-family: var(--font-second)
+}
+
+.contentMessages .person-post .totals {
+    margin-top: .25rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contentMessages .person-post .totals p{
+    color: var(--white);
+    font-size: 13px;
+    font-family: var(--font-second)
+}
+
+.contentMessages .person-post .icons{
+    display: flex;
+    width: 100%;
+    position: relative;
+    margin: auto;
+    justify-content: space-around;
+    padding: .1rem;
+    margin-top: 5px;
+    align-items: center;
+    gap:.25rem;
+    border-top: 1px solid var(--bg);
+    border-bottom: 1px solid var(--bg);
+}
+.contentMessages .person-post .icons .icon{
+    flex: 1;
+    display: flex; 
+    padding: .25rem;
+    justify-content: center;
+    align-items: center;
+    gap: .25rem;
+}
+
+.contentMessages .person-post .icons .icon img{
+    width: 20px;
+    height: 20px;
+}
+
+.contentMessages .person-post .icons .icon:hover{
+    background-color: var(--bg);
+    border-radius: .25rem;
+    cursor: pointer;
+    
+}
+.contentMessages .person-post .icons .icon p{
+    display: flex ;
+    font-family: var(--font-primary) ;
+    font-size: 12px;
+}
+
+.contentMessages .container-comments{
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    overflow-y: auto;
+}
+
+.contentMessages .container-comments::-webkit-scrollbar {
+    display: none;
+}
+
+.contentMessages .container-comments .comments{
+    display: flex;
+    flex-direction: column;
+    padding:  0 1rem;
+
+    justify-content:center;
+}
+.contentMessages .container-comments .comments .user {
+    display: flex;
+    align-items: center;
+}
+
+.contentMessages .container-comments .comments .user .picture-user{
+    position: relative;
+    display: flex;
+    padding: 18px;
+    border-radius:50% ;
+    background: url('https://scontent.fcgh53-1.fna.fbcdn.net/v/t1.6435-9/65805131_2247286838720445_2938989779271811072_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=mtnqnQdRf9UAX8u2xX2&_nc_ht=scontent.fcgh53-1.fna&oh=00_AT9wsej_vOCH5ok5jT9fpcG78TELL7MIpArJruieUxmQgQ&oe=620DE4BC') no-repeat; 
+    background-size: cover;
+
+    margin-right: 1rem;
+}
+.contentMessages .container-comments .comments  .user .comment{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: var(--bg);
+    border-radius: 1.2rem;
+    padding: .5rem 1rem .5rem .5rem;
+    
+}
+.contentMessages .container-comments .comments  .user .comment h1{
+    font-size: 14px;
+    font-family: var(--font-primary);
+    color:var(--white);
+    margin-left: .5rem;
+}
+
+.contentMessages .container-comments .comments  .user .comment p{
+    font-size: 12px;
+    margin-top: .25rem;
+    font-family: var(--font-second);
+    color:var(--white);
+    margin-left: .5rem;
+}
+.contentMessages .container-comments .comments .components{
+    font-weight: normal;
+    display: flex;
+    gap: 1rem;
+    font-family: var(--font-second);
+    font-size: 14px;
+    margin-top: .25rem;
+    margin-bottom: .5rem;
+    margin-left: 3.5rem;
+}
+
+
+
+.contentMessages .container-comments .comments .components p:nth-child(1):hover,
+.contentMessages .container-comments .comments .components p:nth-child(2):hover{
+    cursor: pointer;
+}   
+
+
+.contentMessages form {
+    display: flex;
+    width: 100%;
+    height: 6rem;
+    padding: 1rem 1.75rem ;
+    align-items: center;
+
+}
+
+.contentMessages form textarea {
+    width: 100%;
+    resize: none;
+    outline: none;
+    font-family: var(--font-primary), sans-serif;
+    padding: .5rem;
+    border-radius: .5rem 0 0 0.5rem;
+    height: 2rem;
+    border: none;
+    filter: brightness(90%);
+}
+
+.contentMessages form textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.contentMessages form button {
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 0 .5rem .5rem 0;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    height: 2rem;
+    color: var(--chat-user); 
+    font-weight: 900;
+    align-items: center;
+    display: flex;
+    filter: brightness(90%);
+}
+
+.contentMessages form textarea:hover , form button:hover{
+    filter: brightness(100%);
+}
+
+
+@media (max-width:1000px){
+    .container-picture{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        margin-top: 15rem;
+
+    }
+    .container-picture .picture{
+        width: 95vw;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        position: relative;
+    }
+    .container-picture .picture .arrow:nth-child(1){
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        left: 3rem;
+    }
+    .container-picture .picture .arrow:last-child{
+        top: 50%;
+        bottom: 50%;
+        right: 3rem;
+        position: absolute;
+    }
+    .contentMessages{
+        width: 95vw;
+        background-color: var(--bg);
+        padding: .5rem;
+    
+        position: relative;
+    
+        border-radius: .75rem;
+
+        margin-top: 2rem;
+    }
+}

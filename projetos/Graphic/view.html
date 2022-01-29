@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/view.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
+      integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Graphic</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="chart">
+        <canvas id="myChart"></canvas>
+
+        <div class="conversion">
+          <div class="biggest">
+            <h3>Biggest Conversion Rate</h3>
+            <p><strong>5</strong>%</p>
+          </div>
+          <!-- biggest -->
+
+          <div class="smallest">
+            <h3>Smallest Conversion Rate</h3>
+            <p><strong>30</strong>%</p>
+          </div>
+          <!-- smallest -->
+        </div>
+        <!-- conversion -->
+        <div class="accumulated">
+          <div class="month">
+            <h3>Month Accumulated Rate</h3>
+            <p>(Soma das % do mês)</p>
+            <strong>Year</strong>
+            <canvas id="myChart2"></canvas>
+          </div>
+          <!-- month -->
+
+          <div class="week">
+            <h3>Smallest Accumulated Rate</h3>
+            <p>(Soma das % do senama)</p>
+            <strong>Week</strong>
+            <canvas id="myChart3"></canvas>
+          </div>
+          <!-- week -->
+        </div>
+        <!-- accumulated -->
+      </div>
+      <!-- chart -->
+    </div>
+    <!-- container  -->
+    <script>
+      const labels = [
+        "Jan",
+        "Fev",
+        "Mar",
+        "Abr",
+        "Maio",
+        "Jun",
+        "Jul",
+        "Ago",
+        "Set",
+        "Out",
+        "Nov",
+        "Dez",
+      ];
+      const data = {
+        labels: labels,
+        datasets: [
+          {
+            label: "Mes",
+            data: [65, 59, 80, 81, 56, 55, 40, 100, 5, 36, 50, 40],
+            backgroundColor: [
+              "rgba(255, 99, 132, 0.5)",
+              "rgba(255, 159, 64, 0.5)",
+              "rgba(255, 205, 86, 0.5)",
+              "rgba(75, 192, 192, 0.5)",
+              "rgba(54, 162, 235, 0.5)",
+              "rgba(38, 222, 129, 0.5)",
+              "rgba(43, 203, 186, 0.5)",
+              "rgba(247, 183, 49, 0.5)",
+              "rgba(165, 94, 234, .5)",
+              "rgba(75, 123, 236, 0.5)",
+              "rgba(235, 59, 90, .5)",
+              "rgba(252, 92, 101, .5)",
+            ],
+            borderColor: [
+              "rgba(255, 99, 132)",
+              "rgba(255, 159, 64)",
+              "rgba(255, 205, 86)",
+              "rgba(75, 192, 192)",
+              "rgba(54, 162, 235",
+              "rgba(38, 222, 129)",
+              "rgba(43, 203, 186)",
+              "rgba(247, 183, 49)",
+              "rgba(165, 94, 234)",
+              "rgba(75, 123, 236)",
+              "rgba(235, 59, 90)",
+              "rgba(252, 92, 101)",
+            ],
+            borderWidth: 1,
+          },
+        ],
+      };
+
+      //Configurar o tipo de chart
+      const config = {
+        type: "bar",
+        data: data,
+        options: {
+          scales: {
+            y: {
+              grid: {
+                color: "white",
+              },
+            },
+            x: {
+              grid: {
+                color: "white",
+              },
+            },
+          },
+        },
+      };
+      const myChart = new Chart(document.getElementById("myChart"), config);
+
+      const labelsChart2 = ["2022", "2021", "2020", "2019", "2018", "2017"];
+      const dataChart2 = {
+        labels: labelsChart2,
+        datasets: [
+          {
+            label: "Ano",
+            data: [65, 59, 80, 81, 56, 55],
+            fill: false,
+            borderColor: "rgb(75, 192, 192)",
+            tension: 0.4,
+          },
+        ],
+      };
+      const configChart2 = {
+        type: "line",
+        data: dataChart2,
+        options: {
+          scales: {
+            y: {
+              grid: {
+                color: "white",
+              },
+            },
+            x: {
+              grid: {
+                color: "white",
+              },
+            },
+          },
+        },
+      };
+      const myChart2 = new Chart(
+        document.getElementById("myChart2"),
+        configChart2
+      );
+
+
+
+      const dataChart3 = {
+        labels: ["Primeira", "Segunda", "Terceira", "Quarta"],
+        datasets: [
+          {
+            label: "Semana",
+            data: [300, 50, 100, 70],
+            backgroundColor: [
+              "rgb(255, 99, 132)",
+              "rgb(54, 162, 235)",
+              "rgb(255, 205, 86)",
+              "rgb(75, 192, 192)",
+            ],
+            hoverOffset: 4,
+          },
+        ],
+      };
+
+      const configChart3 = {
+        type: "pie",
+        data: dataChart3,
+      };
+
+      const myChart3 = new Chart(
+        document.getElementById("myChart3"),
+        configChart3
+      );
+
+    </script>
+  </body>
+</html>

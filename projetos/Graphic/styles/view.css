@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(235, 235, 235);
+    overflow-x: hidden;
+}
+.container{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    height: 100%;
+    flex-direction: column;
+}
+.chart {
+    display: flex;
+    align-items: center;
+    width: 900px;
+    flex-direction: column;
+}
+.chart canvas:nth-child(1){
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: white;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    margin-bottom: 1rem;
+}
+.conversion,
+.accumulated{
+    width: 100%;
+    display: flex;
+    justify-content: space-between
+}
+.conversion .biggest,
+.conversion .smallest,
+.accumulated .month,
+.accumulated .week{
+    width: 49%;
+    border-radius: .5rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+
+    margin-bottom: 1rem;
+}
+
+.accumulated .month canvas,
+.accumulated .week canvas{
+    background-color: none;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    box-shadow:transparent;
+}
+
+.conversion .biggest h3,
+.conversion .smallest h3,
+.accumulated .month h3,
+.accumulated .week h3{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    margin: .5rem 0;
+}
+.accumulated .month p,
+.accumulated .week p{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    margin-bottom: .5rem;
+
+}
+.conversion .biggest strong,
+.conversion .smallest strong,
+.accumulated .month strong,
+.accumulated .week strong{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: .5rem;
+}
